@@ -297,7 +297,7 @@ az webapp config container set -n <app name> -g <resource group name> -i <ACR na
 
 ## Deploying to Azure Container Service (AKS)
 
-Firstly, AKS is not a typo. Acure Container Service abbreviation is really AKS. ACS stands for Access Control Service
+Firstly, AKS is not a typo. Acure Container Service on Kubernetes abbreviation is really AKS. ACS refers to "old" Virtual machines cluster.
 
 //ToDo
 
