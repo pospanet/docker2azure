@@ -260,6 +260,12 @@ Outpus should looks like this:
 
 Find parameter *fqdn* or *IP* under *ipAddress* and open it. Of course in case there is a web app inside the container. :-)
 
+If you get error message like Subscription is not registered for Microsoft.ContainerInstance namespace, there is a workaround. Go to Azure portal a create very first Container Instance using UI. Then you can delete it and re-run the script.
+
+![Azure Container Register][acr_ui]
+
+![Create Instance][acr_instance]
+
 ## Deploying to Azure Web App for Containers
 
 Now let's try to do the same for Web App.
@@ -299,3 +305,5 @@ Firstly, AKS is not a typo. Acure Container Service abbreviation is really AKS. 
 [subscription_list]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_response.png	"account list"
 [service_principal]: https://github.com/pospanet/docker2azure/blob/master/screenshots/sp.png	"Service Principal"
 [azure_portal]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal"
+[acr_ui]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal - ACR"
+[acr_instance]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal - Create Container Instance"
