@@ -187,6 +187,79 @@ az container create -g <resource group> -n <instance name> --image <ACR name>.az
 
 Full list of parameters [here](https://docs.microsoft.com/en-us/cli/azure/container?view=azure-cli-latest#az_container_create).
 
+Outpus should looks like this:
+
+```json
+{
+  "additionalProperties": {},
+  "containers": [
+    {
+      "additionalProperties": {},
+      "command": null,
+      "environmentVariables": [],
+      "image": "pospascontainerregistry.azurecr.io/nginx",
+      "instanceView": null,
+      "name": "pospasinstance",
+      "ports": [
+        {
+          "additionalProperties": {},
+          "port": 80,
+          "protocol": null
+        }
+      ],
+      "resources": {
+        "additionalProperties": {},
+        "limits": null,
+        "requests": {
+          "additionalProperties": {},
+          "cpu": 1.0,
+          "memoryInGb": 1.0
+        }
+      },
+      "volumeMounts": null
+    }
+  ],
+  "id": "/subscriptions/58f7e072-a001-45c1-a786-26e8da50e91a/resourceGroups/DockerOnAzure/providers/Microsoft.ContainerInstance/containerGroups/pospasinstance",
+  "imageRegistryCredentials": [
+    {
+      "additionalProperties": {},
+      "password": null,
+      "server": "pospascontainerregistry.azurecr.io",
+      "username": "pospascontainerregistry"
+    }
+  ],
+  "instanceView": {
+    "additionalProperties": {},
+    "events": [],
+    "state": "Pending"
+  },
+  "ipAddress": {
+    "additionalProperties": {},
+    "dnsNameLabel": "pospasinstance",
+    "fqdn": "pospasinstance.westeurope.azurecontainer.io",
+    "ip": "13.80.153.169",
+    "ports": [
+      {
+        "additionalProperties": {},
+        "port": 80,
+        "protocol": "TCP"
+      }
+    ]
+  },
+  "location": "westeurope",
+  "name": "pospasinstance",
+  "osType": "Linux",
+  "provisioningState": "Creating",
+  "resourceGroup": "DockerOnAzure",
+  "restartPolicy": "Always",
+  "tags": null,
+  "type": "Microsoft.ContainerInstance/containerGroups",
+  "volumes": null
+}
+```
+
+Find parameter *fqdn* or *IP* under *ipAddress* and open it. Of course in case there is a web app inside the container. :-)
+
 ## Deploying to Azure Web App for Containers
 
 ## Deploying to Azure Container Service
