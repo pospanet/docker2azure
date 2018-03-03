@@ -265,6 +265,9 @@ Find parameter *fqdn* or *IP* under *ipAddress* and open it. Of course in case t
 > ```
 > az provider register -n Microsoft.ContainerInstance
 > ```
+> This command must be be running not under SP we have created, but ideally under subscription owner. Best way how to do that is using build-in CLI in Azure Portal or re-login using interactive log-in
+
+![Azure CLU under Azure Portal][azure_portal_cli]
 
 ## Deploying to Azure Web App for Containers
 
@@ -307,3 +310,4 @@ Firstly, AKS is not a typo. Acure Container Service abbreviation is really AKS. 
 [azure_portal]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal"
 [acr_ui]: https://github.com/pospanet/docker2azure/blob/master/screenshots/acr_portal.png	"Azure portal - ACR"
 [acr_instance]: https://github.com/pospanet/docker2azure/blob/master/screenshots/aci_run_instance.png	"Azure portal - Create Container Instance"
+[azure_portal_cli]: https://github.com/pospanet/docker2azure/blob/master/screenshots/azure_portal_cli.png	"Azure portal - CLI"
