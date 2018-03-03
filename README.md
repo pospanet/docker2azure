@@ -265,13 +265,6 @@ Find parameter *fqdn* or *IP* under *ipAddress* and open it. Of course in case t
 > ```
 > az provider register -n Microsoft.ContainerInstance
 > ```
->
-> 
->
-
-![Azure Container Register][acr_ui]
-
-![Create Instance][acr_instance]
 
 ## Deploying to Azure Web App for Containers
 
