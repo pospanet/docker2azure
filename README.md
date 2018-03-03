@@ -53,7 +53,7 @@ az login
 
 You will get request for interactive login like:
 
-//ToDo
+![Login request CLI](login_request_cli)
 
 Please open https://aka.ms/devicelogin and finish authentication.
 
@@ -131,3 +131,5 @@ If you also need to have private storage for your Docker containers, there is a 
 
 - ## Deploying to Azure Container Service
 
+
+[login_request_cli]: https://github.com/pospanet/docker2azure/screenshots/az_login_request.PNG
