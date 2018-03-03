@@ -305,5 +305,5 @@ Firstly, AKS is not a typo. Acure Container Service abbreviation is really AKS. 
 [subscription_list]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_response.png	"account list"
 [service_principal]: https://github.com/pospanet/docker2azure/blob/master/screenshots/sp.png	"Service Principal"
 [azure_portal]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal"
-[acr_ui]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal - ACR"
-[acr_instance]: https://github.com/pospanet/docker2azure/blob/master/screenshots/TenantID.png	"Azure portal - Create Container Instance"
+[acr_ui]: https://github.com/pospanet/docker2azure/blob/master/screenshots/acr_portal.png	"Azure portal - ACR"
+[acr_instance]: https://github.com/pospanet/docker2azure/blob/master/screenshots/aci_run_instance.png	"Azure portal - Create Container Instance"
