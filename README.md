@@ -260,7 +260,8 @@ Outpus should looks like this:
 
 Find parameter *fqdn* or *IP* under *ipAddress* and open it. Of course in case there is a web app inside the container. :-)
 
-If you get error message like Subscription is not registered for Microsoft.ContainerInstance namespace, there is a workaround. Go to Azure portal a create very first Container Instance using UI. Then you can delete it and re-run the script.
+> **If you get error message like Subscription is not registered for Microsoft.ContainerInstance namespace, there is a workaround. Go to Azure portal a create very first Container Instance using UI. Then you can delete it and re-run the script.**
+>
 
 ![Azure Container Register][acr_ui]
 
