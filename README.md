@@ -286,7 +286,11 @@ And as a last step, we need to configure Web App to tun our Docker  container
 az webapp config container set -n <app name> -g <resource group name> -i <ACR name>.azurecr.io/<image name> -r https://<ACR name>.azurecr.io -u <ACR name> -p <ACR password>
 ```
 
-## Deploying to Azure Container Service
+## Deploying to Azure Container Service (AKS)
+
+Firstly, AKS is not a typo. Acure Container Service abbreviation is really AKS. ACS stands for Access Control Service
+
+//ToDo
 
 [login_request_cli]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_request.png	"az login request"
 [login_request_web]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_web_request.png	"az login web request"
