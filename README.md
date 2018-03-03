@@ -262,6 +262,30 @@ Find parameter *fqdn* or *IP* under *ipAddress* and open it. Of course in case t
 
 ## Deploying to Azure Web App for Containers
 
+Now let's try to do the same for Web App.
+
+### Linux App Service plan
+
+We have to start with the App Service Plan (ASP) to have hosting environment for out app.
+
+```
+az appservice plan create -n <ASP name> -g <resource group> --sku <sku> --is-linux
+```
+
+SKUs can be found [here](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create).
+
+Next Web App
+
+```
+az webapp create -g <resource group name> -p <ASP name> -n <app name> -r <anything :-)>
+```
+
+And as a last step, we need to configure Web App to tun our Docker  container
+
+```
+az webapp config container set -n <app name> -g <resource group name> -i <ACR name>.azurecr.io/<image name> -r https://<ACR name>.azurecr.io -u <ACR name> -p <ACR password>
+```
+
 ## Deploying to Azure Container Service
 
 [login_request_cli]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_request.png	"az login request"
