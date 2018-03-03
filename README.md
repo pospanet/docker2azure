@@ -132,5 +132,4 @@ If you also need to have private storage for your Docker containers, there is a 
 - ## Deploying to Azure Container Service
 
 
-[login_request_cli]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_request.png	"az login request"
-
+[login_request_cli]: (https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_request.PNG)	"az login request"
