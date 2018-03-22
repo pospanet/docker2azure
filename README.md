@@ -125,10 +125,6 @@ Now it is time to login using SP
 az login --service-principal -u <appId> -p <password> -t <Directory ID>
 ```
 
-Directory ID aka Tenant ID can be found here
-
-![Azure Portal][azure_portal]
-
 ## How to create Azure Container Registry
 
 If you also need to have private storage for your Docker containers, there is a service for that named  [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) (ACR). So firstly let's create out private Docker registry.
@@ -297,9 +293,58 @@ az webapp config container set -n <app name> -g <resource group name> -i <ACR na
 
 ## Deploying to Azure Container Service (AKS)
 
-Firstly, AKS is not a typo. Acure Container Service on Kubernetes abbreviation is really AKS. ACS refers to "old" Virtual machines cluster.
+Firstly, AKS is not a typo. Acure Container Service abbreviation is really AKS. ACS stands for Access Control Service
+
+### Create AKS
+
+We will use the same *az* command for that
+
+```
+az aks create -g <resource group name> -n <cluster name> -p <DNS prefix> -k <Kubernetes version> -s <vm size> -c <node count> -u <ssh user name> --service-principal <service principal> --client-secret <client secret> --generate-ssh-keys
+```
+
+full reference can be found [here](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create).
+
+To get a full VM size list run
+
+```
+az vm list-sizes
+```
+
+>**If you get error message like Subscription is not registered for Microsoft.ContainerService namespace, please run**
+>
+>```
+>az provider register -n Microsoft.ContainerService
+>```
+>
+>This command must be be running not under SP we have created, but ideally under subscription owner. Best way how to do that is using build-in CLI in Azure Portal or re-login using interactive log-in
+
+Once done, we have to get credentials out of the cluster. 
+
+```
+az aks get-credentials -g <resource group name> -n <cluster name>
+```
+
+We will also need to have Kubernetes CLI installed.
+
+For Windows OS run Command Line as Administrator (see below) and then run 
+
+```
+az aks install-cli
+```
+
+![How to run ](cmd_as_admin)
+
+For Linux based OS run
+
+```
+sudo az aks install-cli
+```
+
+### Define desired infrastructure
 
 //ToDo
+
 
 [login_request_cli]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_request.png	"az login request"
 [login_request_web]: https://github.com/pospanet/docker2azure/blob/master/screenshots/az_login_web_request.png	"az login web request"
@@ -311,3 +356,4 @@ Firstly, AKS is not a typo. Acure Container Service on Kubernetes abbreviation i
 [acr_ui]: https://github.com/pospanet/docker2azure/blob/master/screenshots/acr_portal.png	"Azure portal - ACR"
 [acr_instance]: https://github.com/pospanet/docker2azure/blob/master/screenshots/aci_run_instance.png	"Azure portal - Create Container Instance"
 [azure_portal_cli]: https://github.com/pospanet/docker2azure/blob/master/screenshots/azure_portal_cli.png	"Azure portal - CLI"
+[cmd_as_admin]: https://github.com/pospanet/docker2azure/blob/master/screenshots/cmd_as_admin.png "Run command line as Administrator"
