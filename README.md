@@ -333,7 +333,7 @@ For Windows OS run Command Line as Administrator (see below) and then run
 az aks install-cli
 ```
 
-![How to run ](cmd_as_admin)
+![How to run command line as Administrator][cmd_as_admin]
 
 For Linux based OS run
 
