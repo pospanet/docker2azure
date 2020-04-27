@@ -108,7 +108,7 @@ For service principal (SP) we need to specify a scope. In our case it will be ne
 Then create SP by running
 
 ```
-az ad sp create-for-rbac --role "Contributor" --scopes="/subscriptions/<subscription id>/resourceGroups/<resource group name>"
+az ad sp create-for-rbac --name <Service principal display name /optional/> --role "Contributor" --scopes="/subscriptions/<subscription id>/resourceGroups/<resource group name>"
 ```
 
 Btw, take a closer look on output from previous command. Can you see. :-) Yes, you can take the scope from there. So did you write it down manually or copy-and-paste?
